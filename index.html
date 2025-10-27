@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            overflow-x: hidden;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 1400px;
+            position: relative;
+        }
+
+        .ecg-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 80px 0;
+        }
+
+        @media (max-width: 768px) {
+            .ecg-container {
+                height: 200px;
+                margin: 60px 0;
+            }
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .ecg-line {
+            fill: none;
+            stroke: #ff0033;
+            stroke-width: 3;
+            filter: drop-shadow(0 0 8px #ff0033);
+        }
+
+        @media (max-width: 768px) {
+            .ecg-line {
+                stroke-width: 2;
+            }
+        }
+
+        .pulse-point {
+            position: absolute;
+            cursor: pointer;
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .pulse-label {
+            color: #666;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-align: center;
+            transition: all 0.3s ease;
+            line-height: 1.3;
+        }
+
+        @media (min-width: 769px) {
+            .pulse-label {
+                font-size: 13px;
+            }
+            .pulse-label br {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .pulse-label {
+                font-size: 14px;
+            }
+        }
+
+        .pulse-point.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .pulse-point:hover .pulse-label {
+            color: #ff0033;
+            text-shadow: 0 0 10px rgba(255, 0, 51, 0.6);
+        }
+
+        .title {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff0033;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px #ff0033;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+            white-space: nowrap;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .subtitle {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #888;
+            font-size: clamp(14px, 2vw, 18px);
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 8s;
+            text-align: center;
+            max-width: 90%;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="title">My Life...</h1>
+        <div class="ecg-container">
+            <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid meet">
+                <path class="ecg-line" d="M0,150 L140,150 L150,150 L157,80 L164,220 L171,150 L180,150 L320,150 L330,150 L337,80 L344,220 L351,150 L360,150 L500,150 L510,150 L517,80 L524,220 L531,150 L540,150 L680,150 L690,150 L697,80 L704,220 L711,150 L720,150 L860,150 L870,150 L877,80 L884,220 L891,150 L900,150 L1040,150 L1050,150 L1057,80 L1064,220 L1071,150 L1080,150 L1200,150"/>
+            </svg>
+            
+            <!-- 6 Pulse points with text labels -->
+            <a href="leadership.html" class="pulse-point" data-delay="1600" style="left: 13.42%; top: 20%;" title="leadership">
+                <span class="pulse-label">leadership</span>
+            </a>
+            <a href="entrepreneurship.html" class="pulse-point" data-delay="2400" style="left: 28.08%; top: 15%;" title="entrepreneurship">
+                <span class="pulse-label">entrepreneur<br>ship</span>
+            </a>
+            <a href="experience.html" class="pulse-point" data-delay="3200" style="left: 43.08%; top: 15%;" title="work experience">
+                <span class="pulse-label">work<br>experience</span>
+            </a>
+            <a href="sports.html" class="pulse-point" data-delay="4000" style="left: 58.08%; top: 20%;" title="sports">
+                <span class="pulse-label">sports</span>
+            </a>
+            <a href="music.html" class="pulse-point" data-delay="4800" style="left: 73.08%; top: 20%;" title="music">
+                <span class="pulse-label">music</span>
+            </a>
+            <a href="science.html" class="pulse-point" data-delay="5600" style="left: 88.08%; top: 15%;" title="scientific curiosity">
+                <span class="pulse-label">scientific<br>curiosity</span>
+            </a>
+        </div>
+        <p class="subtitle">Find out what makes me tick by clicking on the pulses</p>
+    </div>
+
+    <script>
+        // Animate the ECG line
+        const path = document.querySelector('.ecg-line');
+        const length = path.getTotalLength();
+        
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+        path.style.animation = 'drawLine 6s ease-in-out forwards 1.5s';
+
+        // Add animation keyframes dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes drawLine {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Activate pulse points with delays
+        const pulsePoints = document.querySelectorAll('.pulse-point');
+        pulsePoints.forEach(point => {
+            const delay = parseInt(point.dataset.delay) + 1500;
+            setTimeout(() => {
+                point.classList.add('active');
+            }, delay);
+        });
+    </script>
+</body>
+</html>
