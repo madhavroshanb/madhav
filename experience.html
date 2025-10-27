@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internships - Madhav Roshan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .back-arrow {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: rgba(255, 0, 51, 0.9);
+            padding: 12px 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(255, 0, 51, 0.3);
+        }
+
+        .back-arrow:hover {
+            background: rgba(255, 0, 51, 1);
+            transform: translateX(-5px);
+        }
+
+        .back-arrow::before {
+            content: '←';
+            font-size: 24px;
+        }
+
+        .hero {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/internships/hero-internships.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 72px);
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-quote {
+            font-size: clamp(14px, 2vw, 16px);
+            font-style: italic;
+            max-width: 600px;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+        }
+
+        .tab-container {
+            background: #f5f5f5;
+            border-bottom: 2px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .tabs {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+        }
+
+        .tab {
+            padding: 20px 40px;
+            background: transparent;
+            border: none;
+            color: #666;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .tab:hover {
+            color: #ff0033;
+            background: rgba(255, 0, 51, 0.05);
+        }
+
+        .tab.active {
+            color: #ff0033;
+            border-bottom-color: #ff0033;
+            background: rgba(255, 0, 51, 0.05);
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 60px 0 30px 0;
+        }
+
+        .content-block {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: flex-start;
+        }
+
+        .content-block.reverse {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 768px) {
+            .content-block, .content-block.reverse {
+                flex-direction: column;
+            }
+        }
+
+        .content-text {
+            flex: 1;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .content-text ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .content-text li {
+            margin: 10px 0;
+        }
+
+        .content-image {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .content-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .image-caption {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        .large-image {
+            width: 100%;
+            height: auto;
+            margin: 40px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-arrow">Home</a>
+
+    <div class="hero">
+        <h1>Internships</h1>
+        <p class="hero-quote">"Tell me and I forget, teach me and I may remember, involve me and I learn." — Benjamin Franklin</p>
+    </div>
+
+    <div class="tab-container">
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('trilite')">Tri-Lite</button>
+            <button class="tab" onclick="switchTab('sleke')">SLEKE</button>
+            <button class="tab" onclick="switchTab('vc')">Venture Capital</button>
+        </div>
+    </div>
+
+    <div id="trilite-content" class="content-section active">
+        <div class="container">
+            <h2 class="section-header">Paid Technical Internship at Tri-Lite Technologies (Manufacturers of World's Smallest Augmented Reality Technology) https://www.trilite-tech.com</h2>
+            
+            <div class="content-block">
+                <div class="content-image">
+                    <img src="images/internships/testingapparatus.jpg" alt="Tri-Lite Lab Setup">
+                    <p class="image-caption">A darkroom setup I built independently to measure the modulation transfer function (MTF) of an inbuilt laser projector in a competing phone</p>
+                </div>
+                <div class="content-text">
+                    <p>At Tri-Lite, I was lucky to get hands-on experience with what it's like to be a real engineer. In my time there, I</p>
+                    <ul>
+                        <li>Conducted rigorous lab testing to compile performance statistics for investors</li>
+                        <li>Learned about fast-fourier transforms and coded a program implementing those to measure the Modulation Transfer Function (resolution test) of various competing lasers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-block reverse">
+                <div class="content-image">
+                    <img src="images/internships/MTF images through the camera.png" alt="Image Processing">
+                    <p class="image-caption">I coded programs to generate images of different lines densities with different color profiles to try and understand and reverse-engineer the image processing technology used in competing products.</p>
+                </div>
+                <div class="content-text">
+                    <p>I then had to learn how to code an image analysis tool to figure out the relative intensities of the bright vs. the dark spots independently.</p>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <div class="content-image">
+                    <img src="images/internships/3d printed phone holder.png" alt="3D Modeling">
+                </div>
+                <div class="content-text">
+                    <p>3D modelling and manufacturing a part designed to hold the phone we were testing that was compatible with the existing tools was fun! (and now I (almost) know how to troubleshoot misbehaving 3D printers</p>
+                </div>
+            </div>
+
+            <img src="images/internships/luminous flux vs brightness setting.png" alt="Testing Setup" class="large-image">
+
+            <div class="content-block">
+                <div class="content-text">
+                    <p>I conducted scientific testing to determine how internal brightness settings correlated with radiant flux</p>
+                </div>
+                <div class="content-image">
+                    <img src="images/internships/luminous flux vs brightness setting.png" alt="Data Table">
+                </div>
+            </div>
+
+            <div class="content-block reverse">
+                <div class="content-image">
+                    <img src="images/internships/boxontable.jpeg" alt="Safety Enclosure">
+                </div>
+                <div class="content-text">
+                    <p>Independently prototyped, designed, sourced, assembled, and tested safety enclosure for Class 4 laser, making sure it met international safety standards</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sleke-content" class="content-section">
+        <div class="container">
+            <h2 class="section-header">SLEKE Internship</h2>
+            
+            <div class="content-block">
+                <div class="content-image">
+                    <img src="images/internships/sleke-1.jpg" alt="SLEKE Work">
+                </div>
+                <div class="content-text">
+                    <p>Add your SLEKE internship description here. Talk about your role, responsibilities, and what you accomplished during this internship.</p>
+                    <ul>
+                        <li>Add your first key accomplishment or responsibility</li>
+                        <li>Add your second key accomplishment or responsibility</li>
+                        <li>Add your third key accomplishment or responsibility</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-block reverse">
+                <div class="content-image">
+                    <img src="images/internships/sleke-2.jpg" alt="SLEKE Project">
+                </div>
+                <div class="content-text">
+                    <p>Add details about specific projects or initiatives you worked on at SLEKE.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="vc-content" class="content-section">
+        <div class="container">
+            <h2 class="section-header">Venture Capital Internship</h2>
+            
+            <div class="content-block">
+                <div class="content-image">
+                    <img src="images/internships/vc-1.jpg" alt="VC Work">
+                </div>
+                <div class="content-text">
+                    <p>Add your Venture Capital internship description here. Talk about your role, the firm, and what you learned during this experience.</p>
+                    <ul>
+                        <li>Add your first key accomplishment or responsibility</li>
+                        <li>Add your second key accomplishment or responsibility</li>
+                        <li>Add your third key accomplishment or responsibility</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-block reverse">
+                <div class="content-image">
+                    <img src="images/internships/vc-2.jpg" alt="VC Project">
+                </div>
+                <div class="content-text">
+                    <p>Add details about specific deals, market research, or investment analysis you worked on.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const sections = document.querySelectorAll('.content-section');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            sections.forEach(section => section.classList.remove('active'));
+            
+            if (tabName === 'trilite') {
+                tabs[0].classList.add('active');
+                document.getElementById('trilite-content').classList.add('active');
+            } else if (tabName === 'sleke') {
+                tabs[1].classList.add('active');
+                document.getElementById('sleke-content').classList.add('active');
+            } else {
+                tabs[2].classList.add('active');
+                document.getElementById('vc-content').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
