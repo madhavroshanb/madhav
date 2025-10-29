@@ -18,53 +18,6 @@
             background: #fff;
         }
 
-        .tab-container {
-            background: #f5f5f5;
-            border-bottom: 2px solid #ddd;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .tabs {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            gap: 0;
-        }
-
-        .tab {
-            padding: 20px 40px;
-            background: transparent;
-            border: none;
-            color: #666;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-bottom: 3px solid transparent;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .tab:hover {
-            color: #ff0033;
-            background: rgba(255, 0, 51, 0.05);
-        }
-
-        .tab.active {
-            color: #ff0033;
-            border-bottom-color: #ff0033;
-            background: rgba(255, 0, 51, 0.05);
-        }
-
-        .content-section {
-            display: none;
-        }
-
-        .content-section.active {
-            display: block;
-        }
-
         .back-arrow {
             position: fixed;
             top: 30px;
@@ -122,29 +75,69 @@
             padding: 0 20px;
         }
 
+        .tab-container {
+            background: #f5f5f5;
+            border-bottom: 2px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .tabs {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+        }
+
+        .tab {
+            padding: 20px 40px;
+            background: transparent;
+            border: none;
+            color: #666;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .tab:hover {
+            color: #ff0033;
+            background: rgba(255, 0, 51, 0.05);
+        }
+
+        .tab.active {
+            color: #ff0033;
+            border-bottom-color: #ff0033;
+            background: rgba(255, 0, 51, 0.05);
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .section-intro {
-            font-size: 20px;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #ddd;
+            padding: 40px 20px;
         }
 
         .section-header {
             font-size: 24px;
             font-weight: bold;
-            margin: 60px 0 30px 0;
+            margin: 40px 0 30px 0;
         }
 
         .content-block {
             display: flex;
             gap: 40px;
-            margin-bottom: 60px;
+            margin-bottom: 30px;
             align-items: flex-start;
         }
 
@@ -160,7 +153,7 @@
 
         .content-text {
             flex: 1;
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.8;
         }
 
@@ -179,22 +172,22 @@
         .large-image {
             width: 100%;
             height: auto;
-            margin: 60px 0;
+            margin: 40px 0;
             border-radius: 4px;
         }
 
         .quotes-section {
             background: #f9f9f9;
-            padding: 60px 20px;
-            margin: 60px 0;
+            padding: 40px 20px;
+            margin: 30px 0;
         }
 
         .quotes-header {
             text-align: center;
-            font-size: 14px;
-            font-style: italic;
-            color: #666;
-            margin-bottom: 40px;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #333;
         }
 
         .carousel-container {
@@ -248,7 +241,7 @@
         }
 
         .video-section {
-            margin: 60px 0;
+            margin: 40px 0;
         }
 
         .video-wrapper {
@@ -265,7 +258,7 @@
 
         .video-text {
             flex: 1;
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.8;
         }
 
@@ -289,17 +282,11 @@
         }
 
         .final-section {
-            margin: 60px 0;
-        }
-
-        .final-section h2 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
+            margin: 40px 0;
         }
 
         .final-section p {
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.8;
         }
     </style>
@@ -320,95 +307,104 @@
     </div>
 
     <div id="mun-content" class="content-section active">
-
-    <div class="container">
-        <h2 class="section-header">MUNoV: Building a more connected world</h2>
-        
-                    <div class="content-block">
-            <div class="content-image">
-                <img src="LeadershipImages/Opening Ceremony 2025.jpg" alt="MUNoV Conference">
-            </div>
-            <div class="content-text">
-                <p>As CFO of an 8-person team of the Model United Nations of Vienna (MUNoV) 2025, we built the biggest MUN conference in Austria. The event generated Euro 40,000 in revenue, with a large sum earmarked for charity.</p>
-            </div>
-        </div>
-
-        <div class="content-block reverse">
-            <div class="content-image">
-                <img src="LeadershipImages/carry photo.jpg" alt="Historic Security Council">
-            </div>
-            <div class="content-text">
-                <p>It was an extraordinary experience. We established lifelong relationships, debated issues passionately, and discussed how we could make the world a more peaceful, equitable place. I was honored to chair the Historic Security Council Session.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="quotes-section">
-        <div class="carousel-container">
-            <div class="carousel" id="carousel">
-                <div class="quote-slide">
-                    <p class="quote-text">"Madhav was/is the best chair I've ever had. Honestly, great guy. Enjoyed the amazing conference!"</p>
-                    <p class="quote-author">- Delegate</p>
+        <div class="container">
+            <h2 class="section-header">MUNoV: Building a more connected world</h2>
+            
+            <div class="content-block">
+                <div class="content-image">
+                    <img src="LeadershipImages/Opening Ceremony 2025.jpg" alt="MUNoV Conference">
                 </div>
-                <div class="quote-slide">
-                    <p class="quote-text">"Madhav, it was so wonderful getting to be your co-chair! You are such a lovely and talented individual, and I wish you all the best!!"</p>
-                    <p class="quote-author">- Co-Chair</p>
-                </div>
-                <div class="quote-slide">
-                    <p class="quote-text">"Indian Thomas Shelby"</p>
-                    <p class="quote-author">- Delegate</p>
+                <div class="content-text">
+                    <p>As CFO of an 8-person team of the Model United Nations of Vienna (MUNoV) 2025, we built the biggest MUN conference in Austria. The event generated Euro 40,000 in revenue, with a large sum earmarked for charity.</p>
                 </div>
             </div>
-            <div class="carousel-dots">
-                <span class="dot active" onclick="goToSlide(0)"></span>
-                <span class="dot" onclick="goToSlide(1)"></span>
-                <span class="dot" onclick="goToSlide(2)"></span>
-            </div>
-        </div>
-    </div>
 
-    <div class="container">
-        <div class="video-section">
-            <div class="video-wrapper">
-                <div class="video-text">
-                    <p>It was humbling to deliver the keynote opening address the 500+ participants who had filled the General Assembly hall to it's maximum capacity. In my speech I laid out the guiding framework for discussions, emphasizing the need for dialogue to reach collaborative global solutions.</p>
+            <div class="content-block reverse">
+                <div class="content-image">
+                    <img src="LeadershipImages/carry photo.jpg" alt="Historic Security Council">
                 </div>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/WsKhm45Wr7U" allowfullscreen></iframe>
+                <div class="content-text">
+                    <p>It was an extraordinary experience. We established lifelong relationships, debated issues passionately, and discussed how we could make the world a more peaceful, equitable place. I was honored to chair the Historic Security Council Session.</p>
                 </div>
             </div>
         </div>
 
-        <div class="final-section">
-            <h2>Student Council Representative</h2>
-            <p>Responsibility, ethics and courage. An extraordinary year of experiences as part of my school's elected Student Council. Serving as the voice of your community and negotiating their demands with school administration, from shower curtains to on-campus phone usage, it was a learning experience like no other.</p>
+        <div class="quotes-section">
+            <h3 class="quotes-header">Quotes from participants:</h3>
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <div class="quote-slide">
+                        <p class="quote-text">"Madhav was/is the best chair I've ever had. Honestly, great guy. Enjoyed the amazing conference!"</p>
+                        <p class="quote-author">- Delegate</p>
+                    </div>
+                    <div class="quote-slide">
+                        <p class="quote-text">"Madhav, it was so wonderful getting to be your co-chair! You are such a lovely and talented individual, and I wish you all the best!!"</p>
+                        <p class="quote-author">- Co-Chair</p>
+                    </div>
+                    <div class="quote-slide">
+                        <p class="quote-text">"Indian Thomas Shelby"</p>
+                        <p class="quote-author">- Delegate</p>
+                    </div>
+                    <div class="quote-slide">
+                        <p class="quote-text">"Thank you so much for the continuous feedback throughout the conference, I really feel like I've made a lot of progress with MUN. You made it really easy to say 'I don't know', and made my first conference a really enjoyable experience"</p>
+                        <p class="quote-author">- Delegate</p>
+                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="goToSlide(0)"></span>
+                    <span class="dot" onclick="goToSlide(1)"></span>
+                    <span class="dot" onclick="goToSlide(2)"></span>
+                    <span class="dot" onclick="goToSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="video-section">
+                <div class="video-wrapper">
+                    <div class="video-text">
+                        <p>It was humbling to deliver the keynote opening address the 500+ participants who had filled the General Assembly hall to it's maximum capacity. In my speech I laid out the guiding framework for discussions, emphasizing the need for dialogue to reach collaborative global solutions.</p>
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/WsKhm45Wr7U" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div id="student-council-content" class="content-section">
         <div class="container">
             <h2 class="section-header">Student Council Representative</h2>
+
+            <div class="video-section">
+                <div class="video-wrapper">
+                    <div class="video-text">
+                        <p>Responsibility, ethics and courage. An extraordinary year of experiences as part of my school's elected Student Council. Serving as the voice of your community and negotiating their demands with school administration, from shower curtains to on-campus phone usage, it was a learning experience like no other.</p>
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/8CHqCZxaGw4" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
             
             <div class="content-block">
                 <div class="content-image">
-                    <img src="LeadershipImages/council-image1.jpg" alt="Student Council">
+                    <img src="STUCOImages/us with director.png" alt="Student Council">
                 </div>
                 <div class="content-text">
-                    <p>Add your first Student Council paragraph here. Talk about your role, responsibilities, and what you accomplished.</p>
+                    <p>I used this as a springboard to help ensure a lasting legacy of accountability and transparency at my school through launching the school reform movement (SGRC). We've had meetings with and pitched to the board of directors, principal, PTA, and deputy principal, alongside running stalls at school events, and I'm credited as a co-director.</p>
+                    <p style="margin-top: 15px;">Here's a link to the website: <a href="https://sites.google.com/student.vis.ac.at/sgrc" target="_blank" style="color: #ff0033; text-decoration: underline;">https://sites.google.com/student.vis.ac.at/sgrc</a></p>
                 </div>
             </div>
 
-            <div class="content-block reverse">
+            <div class="content-block">
                 <div class="content-image">
-                    <img src="LeadershipImages/council-image2.jpg" alt="Student Council Activities">
+                    <img src="STUCOImages/stuco-3.jpg" alt="Student Leadership">
                 </div>
                 <div class="content-text">
-                    <p>Add your second Student Council paragraph here. Describe specific initiatives or projects you worked on.</p>
+                    <p>We didn't stop there. After creating meaningful change at our school, we spoke with friends internationally and realised that these same issues tend to emerge across different schools, just because of the paradigm of student governments and elections. We're currently working on legally incorporating our organisiation, and franchising out, creating a branch in a chain of schools in prague, helping them set up their own student government(s), and leveraging our acquired knowledge to expand the impact that we can have across different contexts.</p>
                 </div>
-            </div>
-
-            <div class="final-section">
-                <p>Responsibility, ethics and courage. An extraordinary year of experiences as part of my school's elected Student Council. Serving as the voice of your community and negotiating their demands with school administration, from shower curtains to on-campus phone usage, it was a learning experience like no other.</p>
             </div>
         </div>
     </div>
@@ -428,7 +424,7 @@
         }
 
         setInterval(() => {
-            currentSlide = (currentSlide + 1) % 3;
+            currentSlide = (currentSlide + 1) % 4;
             goToSlide(currentSlide);
         }, 5000);
 
