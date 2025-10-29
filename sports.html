@@ -119,11 +119,17 @@
         .content-image {
             flex: 1;
             min-width: 0;
+            max-height: 400px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
         }
 
         .content-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            max-height: 400px;
+            object-fit: cover;
             display: block;
             border-radius: 4px;
         }
