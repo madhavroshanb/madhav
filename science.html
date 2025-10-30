@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Curiosity - Madhav Roshan</title>
+    <link rel="preload" as="image" href="ScientificImages/scientifichero.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .back-arrow {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: rgba(255, 0, 51, 0.9);
+            padding: 12px 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(255, 0, 51, 0.3);
+        }
+
+        .back-arrow:hover {
+            background: rgba(255, 0, 51, 1);
+            transform: translateX(-5px);
+        }
+
+        .back-arrow::before {
+            content: '←';
+            font-size: 24px;
+        }
+
+        .hero {
+            position: relative;
+            height: 400px;
+            background-color: #1a1a1a;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('ScientificImages/scientifichero.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 72px);
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-quote {
+            font-size: clamp(14px, 2vw, 16px);
+            font-style: italic;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        .tab-container {
+            background: #f5f5f5;
+            border-bottom: 2px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .tabs {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+        }
+
+        .tab {
+            padding: 20px 30px;
+            background: transparent;
+            border: none;
+            color: #666;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .tab:hover {
+            color: #ff0033;
+            background: rgba(255, 0, 51, 0.05);
+        }
+
+        .tab.active {
+            color: #ff0033;
+            border-bottom-color: #ff0033;
+            background: rgba(255, 0, 51, 0.05);
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .content-block {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        @media (max-width: 768px) {
+            .content-block {
+                flex-direction: column;
+            }
+        }
+
+        .content-text {
+            flex: 1;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .content-image {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .content-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 900px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pdf-container embed {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-arrow">Home</a>
+
+    <div class="hero">
+        <h1>Scientific Curiosity</h1>
+        <p class="hero-quote">"A learned blockhead is a greater blockhead than an ignorant one." — Benjamin Franklin</p>
+    </div>
+
+    <div class="tab-container">
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('summaries')">Summaries</button>
+            <button class="tab" onclick="switchTab('ai-traffic')">AI Traffic Management</button>
+            <button class="tab" onclick="switchTab('entropic-springs')">Entropic Springs</button>
+            <button class="tab" onclick="switchTab('sound-learning')">The Sound of Effective Learning</button>
+        </div>
+    </div>
+
+    <div id="summaries-content" class="content-section active">
+        <div class="container">
+            <div class="content-block">
+                <div class="content-image">
+                    <img src="ScientificImages/aiimg.png" alt="AI Traffic Management">
+                </div>
+                <div class="content-text">
+                    <h3 style="margin-bottom: 15px;">AI Traffic Management</h3>
+                    <p>While visiting New Delhi, I was shocked to see ambulances with their lights on, sirens blaring, stuck in massive traffic jams. It felt like pushing the gurney on the sidewalk might be faster. I was already interested in using simulations to model and optimize human behavior after reading about Axelrod's prisoner's dilemma tournament and reading Duncan Watts' book, Six Degrees, and wondered if that same approach could be applied here. Partnering with another coding-savvy friend, we trained an ML traffic management system with the goal of reducing emergency response time. After researching traffic data across urban and rural environments in different countries, we used that information to accurately model traffic flow in a variety of contexts. Realising that our model could do more, we gave it additional parameters: wait times at stop lights, and carbon emissions. After troubleshooting and making sure our model was working right, we achieved notable reductions in all of our KPIs: 58.8% lower emissions, 73.9% shorter wait times, and 61.7% reduced emergency response time. Excited about our results, we wrote a scientific paper on the topic, which we presented at the Vienna Science and Engineering fair. We were awarded "Excellence" for our efforts, and encouraged to publish our findings, which we are currently working on doing.</p>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <div class="content-image">
+                    <img src="ScientificImages/es.png" alt="Entropic Springs">
+                </div>
+                <div class="content-text">
+                    <h3 style="margin-bottom: 15px;">Entropic Springs</h3>
+                    <p>For absolutely no reason in particular, I decided I wanted to find out how temperature impacted spring constants after learning about them in physics. While playing around with this, I found a totally unintuitive result: the hotter the temperature, the more force the rubber band exerted. I thought it was just a problem with my apparatus, so I reran the whole experiment inside a tall measuring cylinder filled with hot water to ensure the temperature of the band was constant, andI got the same result. I had no idea what was going on, so I googled it, and found conflicting answers (maybe reddit isn't the best source of information). A few hours deep into a rabbit hole, I ended up discovering the Gough-Joule effect and entropic springs, which I found really really interesting. They also helped me make sense of why rubber bands were springy in the first place; the springiness of rubber bands is fundamentally an entropic force. After investigating the equations behind this and trying to model it mathematically, I ended up writing a short report on the topic to investigate it more thoroughly, expanding my knowledge of polymer physics which I would end up needing for my hand rehabilitation project!</p>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <div class="content-image">
+                    <img src="ScientificImages/sel.png" alt="The Sound of Effective Learning">
+                </div>
+                <div class="content-text">
+                    <h3 style="margin-bottom: 15px;">The Sound of Effective Learning</h3>
+                    <p>Pursuing a personal interest in neuroscience and how I can set up my environment to support academic success, I ran a randomised, blind control trial to find out which types of music best support learning. Working with a friend to help manage participants (we used students aged 12-14), I designed a custom Stroop-esque association test, and gave participants limited time to memorise this randomised set of color-fruit pairs, giving each IV state different genres of music (or silence) to listen to while studying. We then used standardised testing to see which group performed best (it was silence, followed closely by lofi, with opera in last place). After finding that our results were really robust, and statistically significant, we summarised our findings and entered them into the Vienna Science Fair, where we were recognised for our academic rigor and earned an award of "Excellence".</p>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <div class="content-image">
+                    <img src="ScientificImages/pc.jpeg" alt="Posture Corrector">
+                </div>
+                <div class="content-text">
+                    <h3 style="margin-bottom: 15px;">Intelligent Posture Corrector</h3>
+                    <p>Slightly less meaningful inspiration, but after being yelled at by my mother to stop slouching one time too many, I designed and tested a novel posture corrector. The product dynamically and intelligently corrects posture without compromising inter-disc fluid flow and causing injury/stiffness using arduino and flex sensor technology. I researched biomechanics and anthropometrics to ensure optimal user experience, and tested the products on my friends for a few weeks to see how well it worked. I prioritised size in its design: It's very unobtrusive. I've attached a photo here - you won't see it if you're not looking for it.</p>
+                </div>
+            </div>
+
+            <div style="background: #f9f9f9; padding: 30px; border-radius: 4px; margin-top: 40px; line-height: 1.8;">
+                <p style="font-style: italic;">I'm also currently working on/have finished writing papers on a few other topics, like the Newton-Rhapson Method, and using that as a springboard to delve into Newton's fractals, Euler-Bernoulli beam theory and cantilever deflection, and the Drag Crisis in golf balls. They can only be published by June 2026, as they're all part of Internal Assessments for the IB.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="ai-traffic-content" class="content-section">
+        <div class="container">
+            <div class="pdf-container">
+                <iframe src="ScientificPDFs/AI.pdf" type="application/pdf"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="entropic-springs-content" class="content-section">
+        <div class="container">
+            <div class="pdf-container">
+                <iframe src="ScientificPDFs/ES.PDF" type="application/pdf"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="sound-learning-content" class="content-section">
+        <div class="container">
+            <div class="pdf-container">
+                <iframe src="ScientificPDFs/SEF.pdf" type="application/pdf"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const sections = document.querySelectorAll('.content-section');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            sections.forEach(section => section.classList.remove('active'));
+            
+            if (tabName === 'summaries') {
+                tabs[0].classList.add('active');
+                document.getElementById('summaries-content').classList.add('active');
+            } else if (tabName === 'ai-traffic') {
+                tabs[1].classList.add('active');
+                document.getElementById('ai-traffic-content').classList.add('active');
+            } else if (tabName === 'entropic-springs') {
+                tabs[2].classList.add('active');
+                document.getElementById('entropic-springs-content').classList.add('active');
+            } else if (tabName === 'sound-learning') {
+                tabs[3].classList.add('active');
+                document.getElementById('sound-learning-content').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
