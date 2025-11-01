@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrepreneurship - Madhav Roshan</title>
+    <link rel="preload" as="image" href="keyboardImages/tblr.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .back-arrow {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: rgba(255, 0, 51, 0.9);
+            padding: 12px 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(255, 0, 51, 0.3);
+        }
+
+        .back-arrow:hover {
+            background: rgba(255, 0, 51, 1);
+            transform: translateX(-5px);
+        }
+
+        .back-arrow::before {
+            content: '←';
+            font-size: 24px;
+        }
+
+        .hero {
+            position: relative;
+            height: 400px;
+            background-color: #1a1a1a;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('keyboardImages/tblr.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 72px);
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-quote {
+            font-size: clamp(14px, 2vw, 16px);
+            font-style: italic;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-header {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 40px 0 25px 0;
+        }
+
+        .content-block {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        .content-block.reverse {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 768px) {
+            .content-block, .content-block.reverse {
+                flex-direction: column;
+            }
+        }
+
+        .content-text {
+            flex: 1;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .content-image {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .content-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .content-image.capped-height {
+            max-height: 300px;
+            overflow: hidden;
+        }
+
+        .content-image.capped-height img {
+            width: 100%;
+            height: 100%;
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        .image-caption {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        .large-image {
+            width: 100%;
+            height: auto;
+            margin: 40px 0;
+            border-radius: 4px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .image-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .image-grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .image-grid-3 img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .text-only {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .highlight-box {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 4px;
+            margin: 40px 0;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-arrow">Home</a>
+
+    <div class="hero">
+        <h1>Entrepreneurship</h1>
+        <p class="hero-quote">"I'm convinced that about half of what separates successful entrepreneurs from the non-successful ones is pure perseverance." — Steve Jobs</p>
+    </div>
+
+    <div class="container">
+        <h2 class="section-header">Custom Mechanical Keyboards for Accessibility</h2>
+
+        <div class="content-block">
+            <div class="content-image capped-height">
+                <img src="keyboardImages/scattered.jpg" alt="Custom Keyboard">
+            </div>
+            <div class="content-text">
+                <p>Motivated by a desire to make the keyboard accessible to those with limited finger mobility after volunteering at a senior home, I taught myself how to use Fusion 360 to prototype 3D-printed cases and plates. However, they sounded scratchy and hollow. To fix this, I learned about engineering concepts like damping and resonance control, and modified these parameters in order to minimize structural noise and pinging. Realising I was now capable of manufacturing a large part of the keyboard for a fraction of the cost, using online courses I taught myself how to solder and code to create macro-shortcuts and reduce costs for the keyboard.</p>
+            </div>
+        </div>
+
+        <div class="content-block reverse">
+            <div class="content-image">
+                <img src="keyboardImages/inprog1.jpeg" alt="Keyboard Assembly">
+            </div>
+            <div class="content-text">
+                <p>I then scaled the process and made it more efficient, allowing me to sell fully customised keyboards (including anthropometrically designed cases, customised for elderly people) for significantly cheaper than online (50 euros vs 500+, more for the same customization). This project helped me develop CAD, Design, Business, and Engineering skills that I hope to further refine at college.</p>
+            </div>
+        </div>
+
+        <h2 class="section-header">Streamlining the Process</h2>
+
+        <p class="text-only">Making the keyboards was initially a painstaking process: I had to take apart each switch, tune and lubricate it to meet my quality standards, then troubleshoot bent pins and bad connections. As I made more and more, I streamlined my process, cutting out commercial parts, developing systems and tools to tune and dampen switches faster, and building more and more of the parts in-house.</p>
+
+        <div class="image-grid-3">
+            <img src="keyboardImages/raintil.jpg" alt="Manufacturing Process 1">
+            <img src="keyboardImages/bad.jpeg" alt="Manufacturing Process 2">
+            <img src="keyboardImages/green.jpg" alt="Manufacturing Process 3">
+        </div>
+
+        <div class="content-block">
+            <div class="content-image">
+                <img src="keyboardImages/inprogprime.jpeg" alt="Final Product">
+            </div>
+            <div class="content-text">
+                <p>By the end, the only parts I had to buy externally were the Microcontroller (Pro Micro ~€5 or the nice! Nano for ~€25 for bluetooth boards), and the switches, which ranged from €5 to €30 depending on how premium the board needed to sound, and keycaps (entirely variable depending on aesthetics). From there, I set up custom keymaps for each client and mapped them onto the pro micro, allowing them to set up key layering and macro shortcuts, reducing the distance that their fingers needed to travel.</p>
+            </div>
+        </div>
+
+        <h2 class="section-header">Scaling Up</h2>
+
+        <div class="content-block reverse">
+            <div class="content-image">
+                <img src="keyboardImages/sideblue.jpg" alt="Marketing Shot">
+            </div>
+            <div class="content-text">
+                <p>Since selling affordable builds to the elderly wasn't really profitable, I expanded my target audience to include work-from-home professionals, commissioning a professional photographer to get images for marketing (the ones you see on here).</p>
+            </div>
+        </div>
+
+        <div class="image-grid">
+            <img src="keyboardImages/toddfing.jpg" alt="Marketing Shot 1">
+            <img src="keyboardImages/greenstuff.jpg" alt="Marketing Shot 2">
+        </div>
+
+        <div class="highlight-box">
+            <p>I ended up selling around €1200 worth of keyboards, and I'm trying to scale up my process and gather investor funding, as all of the processes I've developed benefit immensely from economies of scale. My constraint is not being able to legally incorporate my company due to my age, limiting the maximum income I'm allowed to earn, and lacking investor funding. I hope to address both of these at UPenn, where I'll have access to makerspaces and startup competitions on campus.</p>
+        </div>
+
+    </div>
+</body>
+</html>
